@@ -1,0 +1,120 @@
+Question
+1. -webkit-font-smoothing: antialiased;
+브라우저에 표현되는 텍스트가 렌더링될때 부드럽게 표현됨
+antialiased : 계단처럼 렌더링 되는 부분을 부드럽게 표현하는 효과 적용
+
+2. vh(vertical height)
+타겟 요소의 너비값과 높이값을 뷰포트의 높이값에 맞게 사용됩니다.
+vh요소는 높이값의 100분의 1 단위입니다.
+예를 들어 브라우저 높이값이 900px일때 1vh는 9px로 계산됩니다.
+
+3. translate(x, y)
+x,y축만큼 이동
+translate(50%,50%) => x축 오른쪽으로 50% 이동, y축 아래쪽으로 50%이동
+
+3. parent tag position is relative, child tag position is absolute
+relative
+- 요소 자기 자신의 원래 위치를 기준으로 배치
+- 원래 위치를 기준으로 top, bottom, left, right에서 얼마만큼 떨어질지 결정가능
+- 위치를 이동하면서 다른 요소에 영향을 주지 않음
+- 문서 상 원래 위치가 그대로 유지됨
+
+absolute
+- 가장 가까운 위치에 있는 조상 요소를 기준으로 배치합니다.
+- 조상 요소의 위치를 기준으로 top, bottom, left, right에서 얼만큼 떨어질지 결정한다.
+- 조상 중 Position을 가진 요소가 없다면 초기 컨테이닝 블록(<body> 요소)를 기준으로 삼는다.(static을 제외한 값)
+- 문서 상 원래 위치를 잃어버린다.
+- 만약 GrantParent에게 position 값이 있으면 GrantParent의 Position값을 기준으로 움직인다.
+
+
+4. .btn 클래스에 margin-right : 0.5rem 설정하는 이유
+본인 생각으로 각각의 a.btn이 존재하고 margin-right을 설정하지 않으면
+a 버튼끼리 서로 붙어있을 것이다. 이러한 문제를 해결하기 위해서
+margin-right : 0.5rem(8px)을 설정한다고 생각함
+
+5. margin : 0 0 2rem
+상,오,좌=> 0px
+하 => 32px
+
+6. border-spacing
+border-spacing 속성은 인접한 표 칸의 테두리 간격을 의미합니다.
+
+7. .tabs .container > div
+container 클래스 밑에 직속 자식들인 div들한테만 css 스타일 적용
+
+8. border-collapse
+- separated : 표 테두리 분리
+- collapse : 표 테두리 상쇄(구분을 없앰)
+
+9. text-transform
+uppercase : 대문자로 변환
+
+10. ::after
+선택한 요소의 맨 마지막 자식으로 의사 요소를 하나 생성합니다.
+보통 content 속성과 함께 짝지어, 요소에 장식용 콘텐츠를 추가할때 사용됩니다.
+기본값은 inline입니다.
+
+11. z-index
+z-index 속성은 위치 지정 요소와, 그 자손 또는 하위 플렉스 아이템의 z축 순서를
+지정합니다. 더 큰 z-index 값을 가진 요소가 작은 값의 요소 위를 덮습니다.
+즉, z-index값이 크면 클수록 맨 앞으로 이동합니다.
+
+12. box-shadow
+- inset 
+값을 지정하지 않으면(기본값) 요소가 공중에 떠있는 것처럼 밖에 드리우는 그림자가 됩니다.
+inset 키워드가 존재하면 요소가 움푹 들어간 것처럼 그림자가 요소의 테두리 안, 배경색 위, 내부 콘텐츠 밑에 그려집니다.
+- 형식
+box-shadow : inset | offset-x(px) | offset-y(px) | blur-radius(px) | spread-radius(px) | color
+
+13. inline / inline-block / block / grid
+- inline
+inline으로 지정된 엘리먼트는 전후 줄바꿈 없이 한줄에 다른 엘리먼트들과 나란히 배치됩니다.
+대표적인 inline 엘리먼트로 <span>, <a>, <em> 등이 있습니다.
+inline 엘리먼트는 width와 height 속성을 무시하고 margin과 padding 속성은 좌우 간격만 반영합니다.
+
+- block
+block으로 지정된 엘리먼트는 전후 줄바꿈이 들어가 다른 엘리먼트들을 다른 줄로 밀어내고 혼자
+한 줄을 차지합니다.
+대표적인 block 엘리먼트로 <div>, <p>, <h1> 태그 등이 있습니다.
+block 엘리먼트는 width, height, margin, padding 속성이 모두 반영됩니다.
+
+- inline-block
+inline-block으로 지정된 엘리먼트는 기본적으로 inline 엘리먼트처럼 전후 줄바꿈없이 한줄에 다른
+엘리먼트들과 나란히 배치됩니다.
+하지만 inline 엘리먼트에서 불가능했던 width, height, margin, padding 속성을 적용할 수 있습니다.
+대표적인 inline-block 엘리먼트로 <button>, <input>, <select> 태그 등이 있습니다.
+
+14. outline
+- 엘리먼트의 모든 외곽선 속성을 한꺼번에 지정합니다.
+- outline 하위 속성
+ - outline-color
+ - outline-style
+ - outline-width
+- border vs outline 비교
+border는 실제로 공간을 차지하게되어 레이아웃에 영향을 미침.
+단, border-top, border-botton처럼 특정부분만 효과를 줄 수 있음
+
+outline는 레이아웃에 영향을 미치지 않음.
+특정한 부분 외곽선(top,left,right,botton)에 효과를 줄 수 없음
+
+15. grid
+grid는 2차원(행과 열)의 레이아웃 시스템을 제공합니다.
+- grid-template-columns : repeat()
+repeat() 함수를 사용하면 반복되는 값을 손쉽게 설정할 수 있습니다.
+grid-template-columns: repeat(3, 1fr 2fr);  /* 1fr 2fr 1fr 2fr 1fr 2fr */
+
+16. background
+background 단축속성은 색상, 이미지, 원점, 크기, 반복 등 여러 배경 스타일을 한번에 지정합니다.
+- background: url("../img/background.jpg") no-repeat center center/cover; 
+
+17. box-sizing
+box-sizing : 요소의 너비와 높이를 계산하는 방법을 지정
+border-box : 테두리와 안쪽 여백의 크기도 요소의 크기로 고려함
+box-sizing : border-box
+
+18. :root (사용자 정의 css 속성 설정)
+- 정의
+--primary-color : black;
+
+-접근
+var(--primary-color)

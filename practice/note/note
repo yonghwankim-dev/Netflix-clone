@@ -1,0 +1,32 @@
+어려웠던 점
+1. 넷플릭스 showcase 부분의 이미지 배경을 어둡고 그림자를 설정하는 부분이 어려움
+    box-shadow: inset 120px 100px 250px #000;
+
+    box-shadow 형식
+    box-shadow : insert offset-x offset-y blur-radius color
+
+    inset : 값을 지정하지 않으면(기본값) 요소가 공중에 떠있는 것처럼 밖에 드리우는 그림자가
+    됩니다. inset 키워드가 존재하면 요소가 움푹 들어간것처럼 그림자가 요소의 테두리 안,
+    배경색 위, 내부 콘텐츠 밑에 그려집니다.
+    즉, inset 키워드를 지정하면 기존에는 박스 바깥으로 그림자가 드리웠다면 inset 키워드를
+    지정하면 박스 안쪽으로 그림자를 드리우게 할 수 있음
+    
+
+2. 1번 과정 수행중 z-index 설정해도, 작동하지 않음, 해결방법은 position을 설정해야했음
+
+3. grid 설정에 대하여 어려움을 겪음
+    display : grid를 설정해야지 grid-templates-column이 작동되었음
+
+4. 웹사이트 창크기를 줄였을 경우 레이아웃을 그에 맞게 조절하는 것이 어려웠음 (@media)
+    클론 사이트의 화면을 줄였을 경우 조절되는 부분들을 비교하면서 크기 및 레이아웃을 조절하여 구현함
+
+background
+- background-size : contain
+    이미지가 잘리거나 찌그러지지 않는 한도 내에서 제일
+    크게 설정
+- background-size : cover
+    이미지가 찌그러지지 않는 한도 내에서 제일 크게 설정.
+    이미지의 가로세로비가 요소와 다르다면 이미지를 세로
+    또는 가로방향으로 잘라내어 빈 공간이 생기지 않도록 설정합니다.
+- background-color : rgba(0,0,0,0)
+    rgba(0,0,0,0)함수에서 1~3번째까지는 red, green, blue 색상 숫자 0~255로 구성, a는 투명도 0~1로 구성
